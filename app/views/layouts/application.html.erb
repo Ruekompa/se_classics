@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SeClassics</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  </head>
+
+  <body>
+    <header>
+    <div class="navbar-fixed">
+    <nav>
+    <div class="nav-wrapper white">
+      <a href="/" class="brand-logo black-text" id="brandLogo">SE Classics</a>
+      <a href="#" data-target="mobile-nav" class="sidenav-trigger black-text"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="/vehicles" class="black-text">Vehicles</a></li>
+        <!-- <li><a href="#connect" class="waves-effect waves-light btn quote">Free Estimate</a></li> -->
+      </ul>
+    </div>
+    </nav>
+    </div>
+    <ul class="sidenav" id="mobile-nav">
+        <li><a href="/vehicles" class="black-text">Vehicles</a></li>
+       <!--  <li><a href="#connect" class="black-text">Free Estimate</a></li> -->
+    </ul>
+    </header>
+
+    <main>
+      <% flash.each do |key, value| %>
+        <div style="text-align: center;" class="alert alert-<%= key %>"><%= value %></div>
+      <% end %>
+    <%= yield %>
+  </main>
+
+  <footer>
+  </footer>
+  </body>
+</html>

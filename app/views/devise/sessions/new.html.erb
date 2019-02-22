@@ -1,0 +1,63 @@
+<div class="container">
+    <div class="row">
+        <div class="col s12 m12">
+          <div class="card white center" style="margin-top: 4rem;">
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="card-content black-text">
+  <div class="row">
+  <div class="col s12">
+   <h1 style="font-weight: lighter;">Admin Login</h1>
+  <div class="circle grey lighten-3" style="height: 164px; width: 164px; float: left; position: relative; left: calc(50% - 6.5rem);">
+    <i class="material-icons large valign grey-text" style="float: left;
+    position: relative;
+    top: calc(50% - 47px);
+    left: calc(50% - 47px);">person</i>
+
+    </div>
+    </div>
+    </div>
+
+       
+     <div class="row">
+   <div class="input-field col s12">
+    <%= f.email_field :email, autofocus: true %>
+    <%= f.label :email %>
+   </div>
+</div>
+ <div class="row">
+  <div class="input-field col s12">
+     <%= f.password_field :password, autocomplete: "off" %>
+       <%= f.label :password %>
+  </div>
+</div>
+  <% if devise_mapping.rememberable? -%>
+   <div class="row">
+    <div class="col s12">
+    <p>
+      <%= f.check_box :remember_me %>
+      <%= f.label :remember_me %>
+      </p>
+      </div>
+   </div>
+  <% end -%>
+</div>
+ <div class="row">
+ <div class="col s12">
+  <div class="card-action">
+  <%= f.submit "Log in", class: 'btn', style: 'width: 100%' %>
+  </div>
+  </div>
+  </div>
+<% end %>
+      </div>
+    </div>
+</div>
+
+
+<div class="row">
+<div class="col s12">
+<%= render "devise/shared/links" %>
+</div>
+</div>
+
+</div>
