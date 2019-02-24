@@ -56,5 +56,5 @@ private
 
       
     def vehicle_params
-      params.require(:vehicle).permit(:id, :title, :description, :make, :model, :year, :color, :sold, :type_of_vehicle)
+      params.require(:vehicle).permit(:id, :title, :description, :make, :model, :year, :color, :sold, :type_of_vehicle, :vehicle_photo, :price)
     end

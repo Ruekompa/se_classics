@@ -22,5 +22,7 @@ $(document).ready(function(){
     $('.collapsible').collapsible();
     $('.parallax').parallax();
     $('.sidenav').sidenav();
-    $('select').material_select();   
+    $('select').material_select();
+    $('select').formSelect();
+    $('.dropdown-trigger').dropdown();   
   });
