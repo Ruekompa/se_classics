@@ -48,7 +48,7 @@ gem 'devise'
 
 gem 'mini_magick'
 
-gem 'carrierwave'
+gem 'carrierwave', :github => "carrierwaveuploader/carrierwave"
 
 gem 'dropzonejs-rails'
 

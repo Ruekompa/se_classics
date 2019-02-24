@@ -16,13 +16,13 @@
 //= require activestorage
 //= require turbolinks
 //= require ckeditor/init
+//= require dropzone
 //= require_tree .
 
 $(document).ready(function(){
     $('.collapsible').collapsible();
     $('.parallax').parallax();
     $('.sidenav').sidenav();
-    $('select').material_select();
     $('select').formSelect();
     $('.dropdown-trigger').dropdown();   
   });

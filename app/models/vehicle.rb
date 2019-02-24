@@ -1,3 +1,3 @@
 class Vehicle < ApplicationRecord
-		mount_uploader :vehicle_photo, VehiclePhotoUploader
+		mount_uploaders :vehicle_photos, VehiclePhotoUploader
 end

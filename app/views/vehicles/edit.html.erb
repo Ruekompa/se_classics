@@ -9,13 +9,19 @@
         
         <%= form_for @vehicle do |f| %>
         <div class="row">
+           <div class="input-field col s12 m6">
+             
+              <%= f.select(:type_of_vehicle, ['Car', 'Truck', 'Motorcycle'], {include_blank: "Vehicle Type"}, {:class => "browser-default", :label => "Vehicle Type"}) %>
+          </div>
+        </div>
+        <div class="row">
            <div class="input-field col s12">
                <label for="title" class="grey-text lighten-3">Vehicle Name</label>
               <%= f.text_field :title, :class => "validate", :type => "text" %>
           </div>
           <div class="input-field col s12">
-              <label for="description" class="grey-text lighten-3">Description</label>
-              <%= f.text_area :description %>
+              
+              <%= f.cktext_area :description, ckeditor: { language: 'us', toolbar: 'mini'} %>
            </div>
 
            <div class="input-field col s12 m6">
@@ -32,7 +38,13 @@
                <label for="year" class="grey-text lighten-3">Year</label>
               <%= f.text_field :year %>
           </div>
+          <div class="input-field col s12 m6">
+               <label for="price" class="grey-text lighten-3">Price</label>
+              <%= f.number_field :price, value: number_to_currency(f.object.price.to_f, delimiter: '', unit: ''), step: :any %>
+          </div>
        </div>
+
+
        <div class="row">
        	    <div class="s12">
        	        <div class="card-action">
@@ -45,3 +57,30 @@
 
 	</div>
 </div>
+
+
+<div class="container">
+	<div class="section">
+		<div class="row">
+			<h3>Add Images</h3>
+			<div class="divider"></div>
+		</div>
+        <div class="row">
+       	<div class="col card-action">
+         	<%= form_for @vehicle, url: vehicle_vehicle_photos_path(@vehicle), method: :post do |f| %>
+         	 <%= f.file_field :vehicle_photos, multiple: true %>
+        </div>
+        </div>
+        <div class="row">
+         	 <div class="col s12">
+                     <%= f.submit 'Add Photos', :class => "btn btn-waves black" %>
+              </div>
+                <% end %>
+            </div>
+  
+</div>
+</div>
+
+
+
+
