@@ -14,8 +14,8 @@
               <%= f.text_field :title, :class => "validate", :type => "text" %>
           </div>
           <div class="input-field col s12">
-              <label for="description" class="grey-text lighten-3">Description</label>
-              <%= f.text_area :description %>
+              
+              <%= f.cktext_area :description, ckeditor: { language: 'us', toolbar: 'mini'} %>
            </div>
 
            <div class="input-field col s12 m6">

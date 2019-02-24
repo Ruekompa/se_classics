@@ -5,7 +5,8 @@
 * rails  5.2.1
 
 ## Dependencies
-Postgresql
+* Postgresql
+* ImageMagick (convert -version to check if installed)
 
 ## Bundle 
 `bundle install`
