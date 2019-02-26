@@ -1,5 +1,11 @@
 @charset "UTF-8";
 
+@font-face {
+  font-family: 'VintageRegular';
+  src:  url('/fonts/vintage-regular-webfont.woff2') format('woff2'),
+        url('/fonts/vintage-regular-webfont.woff') format('woff');
+}
+
 @import "materialize";
 @import "additional";
 @import "dropzone/basic";
@@ -8,4 +14,19 @@
   a.brand-logo {
       padding-left: 1rem;
   }
+}
+
+span.brand-text1 {
+    font-family: VintageRegular, sans-serif;
+    text-transform: uppercase;
+}
+
+span.brand-text2 {
+    font-family: kinescope, sans-serif;
+}
+
+@media #{$small-and-down} {
+a#brandLogo {
+    font-size: 1.5rem;
+}
 }
