@@ -16,6 +16,12 @@
   }
 }
 
+@media #{$large-and-up} {
+  li.nav-list {
+    padding-right: 1rem;
+  }
+}
+
 span.brand-text1 {
     font-family: VintageRegular, sans-serif;
     text-transform: uppercase;
@@ -26,7 +32,7 @@ span.brand-text2 {
 }
 
 @media #{$small-and-down} {
-a#brandLogo {
+  a#brandLogo {
     font-size: 1.5rem;
-}
+  }
 }
