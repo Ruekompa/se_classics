@@ -19,9 +19,9 @@
 //= require_tree .
 
 $(document).ready(function(){
+	$('.sidenav').sidenav();
     $('.collapsible').collapsible();
     $('.parallax').parallax();
-    $('.sidenav').sidenav();
     $('select').formSelect();
     $('.dropdown-trigger').dropdown(); 
     $('.materialboxed').materialbox();  
