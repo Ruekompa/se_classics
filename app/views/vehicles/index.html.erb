@@ -1,5 +1,5 @@
 <section class="section">
-  <section class="container">
+  <div class="container">
     <h1>Vehicles</h1>
      <div class="divider"></div>
     <% if @vehicles.empty? %>
@@ -12,10 +12,11 @@
       <div class="col s12 m4">
         <section class="card">
           <div class="card-image waves-effect waves-block waves-light" />
-          <div class="card-content">
-            <span class="flow-text activator grey-text text-darken-4">
-              <%= g.title.titleize %><i class="material-icons right">more_vert</i>
-            </span>
+              <div class="card-content">
+                  <span class="flow-text activator grey-text text-darken-4">
+                   <%= g.title.titleize %><i class="material-icons right">more_vert</i>
+                  </span>
+              </div>
           </div>
           <div class="card-reveal">
             <span class="card-title grey-text text-darken-4"> <%= g.title.titleize %><i class="material-icons right">close</i></span>
@@ -29,5 +30,5 @@
     </div>
     <% end %>
     <% end %>
-  </section>
+  </div>
 </section>
