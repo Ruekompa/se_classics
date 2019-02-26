@@ -16,6 +16,10 @@
                     <div class="card-image waves-effect waves-block waves-light" />            
                     <%= link_to (image_tag (g.vehicle_photos.first.thumb.url), class: 'activator'), vehicle_path(g.id) %>    
                     </div>
+                    <% else %>
+                    <div class="card-image waves-effect waves-block waves-light" />            
+                    <%= link_to (image_tag ("/images/vehicle-placeholder.jpg"), class: 'activator'), vehicle_path(g.id) %>    
+                    </div>
                     <% end %>
                       <div class="card-content">
                         <span class="flow-text activator grey-text text-darken-4">
