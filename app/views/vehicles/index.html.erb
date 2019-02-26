@@ -8,7 +8,7 @@
           <ul class="vehicles_list">
           <% @vehicles.each_slice(3) do |slice| %> 
             <div class="row">
-            <% slice.each do |g| %>
+              <% slice.each do |g| %>
                 <li class="vehicle_node">
                     <div class="col s12 m4">
                         <div class="card">
@@ -26,12 +26,11 @@
                        </div>
                    </div>
                 </li> 
-            <% end %>
-                  </div>
-           <% end %>
+              <% end %>
+            </div>
+         <% end %>
          </ul>
-    <% end %>
-        
+    <% end %>    
   </div>
 </section>
 
