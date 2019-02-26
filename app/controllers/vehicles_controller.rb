@@ -48,6 +48,8 @@ class VehiclesController < ApplicationController
       render :action => :index
  end
 
+
+
 end
 
 

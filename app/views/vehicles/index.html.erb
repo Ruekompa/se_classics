@@ -12,13 +12,16 @@
               <li class="vehicle_node">
                 <div class="col s12 m4">
                   <div class="card">
-                    <div class="card-image waves-effect waves-block waves-light" />
+                    <% unless g.vehicle_photos.empty? %>
+                    <div class="card-image waves-effect waves-block waves-light" />            
+                    <%= link_to (image_tag (g.vehicle_photos.first.thumb.url), class: 'activator'), vehicle_path(g.id) %>    
+                    </div>
+                    <% end %>
                       <div class="card-content">
                         <span class="flow-text activator grey-text text-darken-4">
-                          <%= g.title.titleize %><i class="material-icons right">more_vert</i>
+                          <%= link_to g.title.titleize, vehicle_path(g.id), :class => "grey-text text-darken-4" %><i class="material-icons right">more_vert</i>
                         </span>
                       </div>
-                    </div>
                     <div class="card-reveal">
                       <span class="card-title grey-text text-darken-4"> <%= g.title.titleize %><i class="material-icons right">close</i></span>
                       <p><a href="/vehicles/<%= g.id %>/edit" class="black-text">Edit</a></p>
