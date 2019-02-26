@@ -14,7 +14,6 @@
 //= require rails-ujs
 //= require materialize-sprockets
 //= require activestorage
-//= require turbolinks
 //= require ckeditor/init
 //= require dropzone
 //= require_tree .
