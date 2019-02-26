@@ -27,8 +27,10 @@
 	    </div>
 	</div>
 	<div class="row">
+	  <div class="col s12">
 		<h2 style="font-size: 3rem;">Gallery</h2>
 		<div class="divider"></div>
+	  </div>
 	</div>
 		<% @vehicle.vehicle_photos.each_slice(3).each_with_index do |image, index| %>
 		<div class="row">
@@ -51,3 +53,4 @@
 		
 	</div>
 </section>
+
