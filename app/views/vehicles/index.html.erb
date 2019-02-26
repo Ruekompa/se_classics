@@ -5,9 +5,9 @@
     <% if @vehicles.empty? %>
     <p class="flow-text">No Vehicles Listed</p>
     <% else %>
-    <% @vehicles.each_slice(3) do |slice| %> 
-    <div class="row">
-        <ul class="vehicles_list">
+          <ul class="vehicles_list">
+          <% @vehicles.each_slice(3) do |slice| %> 
+            <div class="row">
             <% slice.each do |g| %>
                 <li class="vehicle_node">
                     <div class="col s12 m4">
@@ -27,10 +27,11 @@
                    </div>
                 </li> 
             <% end %>
-        </ul>
-    </div>
+                  </div>
+           <% end %>
+         </ul>
     <% end %>
-    <% end %>
+        
   </div>
 </section>
 
