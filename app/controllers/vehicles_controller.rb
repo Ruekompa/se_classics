@@ -1,7 +1,7 @@
 class VehiclesController < ApplicationController
 	# before_action :authenticate_admin!
   def index
-  	@vehicles = Vehicle.all
+  	@vehicles = Vehicle.order("created_at DESC")
   end
 
   def show
