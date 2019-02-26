@@ -1,18 +1,53 @@
+<section class="section">
 <div class="container">
-	<div class="section">
+	<div class="row">
+		<div class="col s12">
+		<h1><%= @vehicle.title.titleize %></h1>
+		<div class="divider"></div>
+	    </div>
+	</div>
+	<div class="row">
+		<div class="col s12 m4">
+        <ul class="collection with-header">
+        <li class="collection-header"><h4>Vehicle Details</h4></li>
+        <li class="collection-item"><strong>Make:</strong> <%= @vehicle.make %></li>
+        <li class="collection-item"><strong>Model:</strong> <%= @vehicle.model %></li>
+        <li class="collection-item"><strong>Year:</strong> <%= @vehicle.year %></li>
+        </ul>
+        </div>
+        <div class="col s12 m6 offset-m2">
+            <h3>Price</h3>
+        	<p class="flow-text"><%= number_to_currency(@vehicle.price) %></p>
+        </div>
+  </div>
+	<div class="row">
+		<div class="col s12">
+		<h3>Description</h3>
+		<%= @vehicle.description.html_safe %>
+	    </div>
+	</div>
+	<div class="row">
+		<h2 style="font-size: 3rem;">Gallery</h2>
+		<div class="divider"></div>
+	</div>
+		<% @vehicle.vehicle_photos.each_slice(3).each_with_index do |image, index| %>
 		<div class="row">
-		<% @vehicle.vehicle_photos.each_with_index do |image, index| %>
-         <%= image_tag(image.url) %>
+		<% image.each do |g| %>
+		<div class="col s12 m4">
+         <%= image_tag(g.url, :class => "responsive-img materialboxed") %>
          <%= link_to "Delete", vehicle_vehicle_photo_path(@vehicle, index), :method => :delete, data: { confirm: "Are you sure you want to delete this image?" } %>
+        </div>
+        <% end %>
+        </div>
          <% end %>
          <div class="row">
          	<%= form_for @vehicle, url: vehicle_vehicle_photos_path(@vehicle), method: :post do |f| %>
          	 <%= f.file_field :vehicle_photos, multiple: true %>
          	 <div class="card-action">
                      <%= f.submit 'Submit', :class => "btn btn-waves black" %>
-                </div>
-                <% end %>
+             </div>
+             <% end %>
          </div>
-		</div>
+		
 	</div>
-</div>
+</section>

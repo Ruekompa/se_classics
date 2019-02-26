@@ -24,5 +24,6 @@ $(document).ready(function(){
     $('.parallax').parallax();
     $('.sidenav').sidenav();
     $('select').formSelect();
-    $('.dropdown-trigger').dropdown();   
+    $('.dropdown-trigger').dropdown(); 
+    $('.materialboxed').materialbox();  
   });
