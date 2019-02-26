@@ -1,9 +1,10 @@
 <section class="section">
-	<section class="container">
+  <section class="container">
     <h1>Vehicles</h1>
+     <div class="divider"></div>
     <% if @vehicles.empty? %>
     <p class="flow-text">No Vehicles Listed</p>
-    <div class="divider" />
+   
     <% else %>
     <% @vehicles.each_slice(3) do |slice| %> 
     <div class="row">
@@ -30,4 +31,3 @@
     <% end %>
   </section>
 </section>
-
