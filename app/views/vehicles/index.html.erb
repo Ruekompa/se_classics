@@ -1,35 +1,33 @@
 <section class="section">
 	<section class="container">
     <h1>Vehicles</h1>
+    <% if @vehicles.empty? %>
+    <p class="flow-text">No Vehicles Listed</p>
     <div class="divider" />
-      <% if @vehicles.empty? %>
-        <p class="flow-text">No Vehicles Listed</p>
-        <p>no vehicles here</p>
-      <% else %>
-      <% @vehicles.each_slice(3) do |slice| %> 
-      <div class="row">
-        <% slice.each do |g| %>
-        <div class="col s12 m4">
-          <section class="card">
-            <div class="card-image waves-effect waves-block waves-light" />
-            <div class="card-content">
-              <span class="flow-text activator grey-text text-darken-4">
-                <%= g.title.titleize %><i class="material-icons right">more_vert</i>
-              </span>
-            </div>
-            <div class="card-reveal">
-              <span class="card-title grey-text text-darken-4"> <%= g.title.titleize %><i class="material-icons right">close</i></span>
-              <p>
-                <a href="/vehicles/<%= g.id %>/edit" class="black-text">Edit</a>
-              </p>
-            </div>
-          </section>
-        </div> 
-        <% end %>
+    <% else %>
+    <% @vehicles.each_slice(3) do |slice| %> 
+    <div class="row">
+      <% slice.each do |g| %>
+      <div class="col s12 m4">
+        <section class="card">
+          <div class="card-image waves-effect waves-block waves-light" />
+          <div class="card-content">
+            <span class="flow-text activator grey-text text-darken-4">
+              <%= g.title.titleize %><i class="material-icons right">more_vert</i>
+            </span>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4"> <%= g.title.titleize %><i class="material-icons right">close</i></span>
+            <p>
+              <a href="/vehicles/<%= g.id %>/edit" class="black-text">Edit</a>
+            </p>
+          </div>
+        </section>
+      </div> 
+      <% end %>
     </div>
-  
-      <% end %>
-      <% end %>
+    <% end %>
+    <% end %>
   </section>
 </section>
 
