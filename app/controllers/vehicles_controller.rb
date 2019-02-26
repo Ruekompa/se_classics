@@ -43,7 +43,7 @@ class VehiclesController < ApplicationController
  def destroy
  	@vehicle = Vehicle.find params[:id]
 
- 	@album.destroy
+ 	@vehicle.destroy
       flash[:notice] = 'Vehicle Deleted'
       render :action => :index
  end
