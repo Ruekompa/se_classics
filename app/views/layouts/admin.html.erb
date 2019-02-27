@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Southeastern Classics</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.typekit.net/nne3gxi.css">
+  </head>
+
+  <body>
+    <header>
+    <div class="navbar-fixed">
+    <nav>
+    <div class="nav-wrapper grey darken-4">
+      <a href="/" class="brand-logo white-text" id="brandLogo"><span class="brand-text1">Southeastern</span> <span class="brand-text2">Classics</span></a>
+      <a href="#" data-target="mobile-nav" class="sidenav-trigger white-text"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="/admin/vehicles" class="waves-effect waves-light btn manage red darken-2">Manage Vehicles</a></li>
+      </ul>
+    </div>
+    </nav>
+    </div>
+    <ul class="sidenav" id="mobile-nav">
+        <li><a href="/admin/vehicles" class="black-text">Manage Vehicles</a></li>
+    </ul>
+    </header>
+
+    <main>
+      <% flash.each do |key, value| %>
+        <div style="text-align: center;" class="alert alert-<%= key %>"><%= value %></div>
+      <% end %>
+    <%= yield %>
+  </main>
+
+  <footer>
+  </footer>
+  </body>
+</html>

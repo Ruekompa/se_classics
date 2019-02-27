@@ -1,5 +1,6 @@
 class VehiclesController < ApplicationController
-	# before_action :authenticate_admin!
+	before_action :authenticate_admin!
+	layout 'admin'
   def index
   	@vehicles = Vehicle.order("created_at DESC")
   end

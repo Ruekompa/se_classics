@@ -1,4 +1,5 @@
 class VehiclePhotosController < ApplicationController
+	before_action :authenticate_admin!
 	before_action :set_vehicle
 
   def create

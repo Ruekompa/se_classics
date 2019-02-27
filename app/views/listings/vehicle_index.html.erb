@@ -1,0 +1,39 @@
+<section class="section">
+  <div class="container">
+    <h1>Vehicles</h1>
+      <div class="divider"></div>
+    <% if @vehicles.empty? %>
+      <p class="flow-text">No Vehicles Listed</p>
+    <% else %>
+      <ul class="vehicles_list">
+        <% @vehicles.each_slice(3) do |slice| %> 
+          <div class="row">
+            <% slice.each do |g| %>
+              <li class="vehicle_node">
+                <div class="col s12 m4">
+                  <div class="card">
+                    <% unless g.vehicle_photos.empty? %>
+                    <div class="card-image waves-effect waves-block waves-light" />            
+                    <%= link_to (image_tag (g.vehicle_photos.first.thumb.url), class: 'activator'), vehicle_listing_path(g.id) %>    
+                    </div>
+                    <% else %>
+                    <div class="card-image waves-effect waves-block waves-light" />            
+                    <%= link_to (image_tag ("/images/vehicle-placeholder.jpg"), class: 'activator'), vehicle_listing_path(g.id) %>    
+                    </div>
+                    <% end %>
+                      <div class="card-content">
+                        <span class="flow-text activator grey-text text-darken-4">
+                          <%= link_to g.title.titleize, vehicle_path(g.id), :class => "grey-text text-darken-4" %>
+                        </span>
+                      </div>
+                    
+                  </div>
+                </div>
+              </li> 
+            <% end %>
+          </div>
+        <% end %>
+      </ul>
+    <% end %>    
+  </div>
+</section>
