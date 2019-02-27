@@ -6,6 +6,8 @@
         url('/fonts/vintage-regular-webfont.woff') format('woff');
 }
 
+@import "materialize/components/color-variables";
+$primary-color: color("red", "darken-4") !default;
 @import "materialize";
 @import "additional";
 @import "dropzone/basic";

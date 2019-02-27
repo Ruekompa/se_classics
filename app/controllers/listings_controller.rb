@@ -1,6 +1,8 @@
 class ListingsController < ApplicationController
+	include Pagy::Backend
+
  def vehicle_index
-  	@vehicles = Vehicle.order("created_at DESC")
+  	@pagy, @vehicles = pagy(Vehicle.order("created_at DESC"), items: 12)
   end
 
   def vehicle_show

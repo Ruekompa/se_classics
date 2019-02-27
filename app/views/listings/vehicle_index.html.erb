@@ -34,6 +34,11 @@
           </div>
         <% end %>
       </ul>
-    <% end %>    
+    <% end %>
+    <% unless @vehicles.count < 13 %>
+    <div class="row center">
+   <%== pagy_materialize_nav(@pagy) %>
+   </div>
+   <% end %>  
   </div>
 </section>

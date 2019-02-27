@@ -50,6 +50,8 @@ gem 'mini_magick'
 
 gem 'carrierwave', :github => "carrierwaveuploader/carrierwave"
 
+gem 'pagy'
+
 gem 'dropzonejs-rails'
 
 gem 'ckeditor'
