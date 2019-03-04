@@ -43,6 +43,16 @@
               <%= f.number_field :price, value: number_to_currency(f.object.price.to_f, delimiter: '', unit: ''), step: :any %>
           </div>
        </div>
+       <div class="row">
+       	<div class="input-field col s12">
+       		<p>
+       		<label>
+       		<%= f.check_box :sold %>
+       		<span>Vehicle Sold?</span>
+       		</label>
+       		</p>
+       	</div>
+       </div>
 
        <div class="row">
 		<div class="col 12">
