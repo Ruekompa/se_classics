@@ -69,6 +69,20 @@
 	</div>
 </div>
 
+<div class="section">
+	<div class="container">
+        <div class="row">
+		<% @vehicle.vehicle_photos.each.with_index do |g, index| %>
+		<div class="col s12 m4">
+         <%= image_tag(g.url, :class => "responsive-img materialboxed") %>
+         <%= link_to "Delete", vehicle_vehicle_photo_path(@vehicle, index), :method => :delete, data: { confirm: "Are you sure you want to delete this image?" } %>
+        </div>
+        <% end %>
+        </div>
+
+	</div>
+</div>
+
 
 <div class="container">
 	<div class="section">
