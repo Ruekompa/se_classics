@@ -7,7 +7,7 @@
 }
 
 @import "materialize/components/color-variables";
-$primary-color: color("red", "darken-4") !default;
+$primary-color: color("red", "darken-2") !default;
 @import "materialize";
 @import "additional";
 @import "dropzone/basic";

@@ -20,15 +20,13 @@
       <a href="/" class="brand-logo white-text" id="brandLogo"><span class="brand-text1">Southeastern</span> <span class="brand-text2">Classics</span></a>
       <a href="#" data-target="mobile-nav" class="sidenav-trigger white-text"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
-        <li class="nav-list"><a href="/vehicles" class="white-text">Vehicles</a></li>
-        <!-- <li><a href="#connect" class="waves-effect waves-light btn quote">Free Estimate</a></li> -->
+        <li class="nav-list"><a href="/listings/vehicles" class="white-text">Vehicles</a></li>
       </ul>
     </div>
     </nav>
     </div>
     <ul class="sidenav" id="mobile-nav">
-        <li><a href="/vehicles" class="black-text">Vehicles</a></li>
-       <!--  <li><a href="#connect" class="black-text">Free Estimate</a></li> -->
+        <li><a href="/listings/vehicles" class="black-text">Vehicles</a></li>
     </ul>
     </header>
 
@@ -39,7 +37,29 @@
     <%= yield %>
   </main>
 
-  <footer>
-  </footer>
+ <footer class="page-footer">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Footer Content</h5>
+                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="/listings/vehicles">Vehicles</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Contact</a></li>
+
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © <%= Time.new.strftime("%Y") %> Southeastern Classics
+            <a class="grey-text text-lighten-4 right" href="/admin">Login</a>
+            </div>
+          </div>
+        </footer>
   </body>
 </html>
