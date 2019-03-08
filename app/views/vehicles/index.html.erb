@@ -36,6 +36,7 @@
                     <div class="card-reveal">
                       <span class="card-title grey-text text-darken-4"> <%= g.title.titleize %><i class="material-icons right">close</i></span>
                       <p><a href="/admin/vehicles/<%= g.id %>/edit" class="black-text">Edit</a></p>
+                      <p><%= link_to "Delete", vehicle_path(g.id), :class => "black-text", :method => :delete, data: { confirm: "Are you sure you want to delete this Vehicle?" } %></p>
                     </div>
                   </div>
                 </div>

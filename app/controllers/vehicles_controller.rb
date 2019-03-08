@@ -79,12 +79,10 @@ class VehiclesController < ApplicationController
 
  def destroy
  	@vehicle = Vehicle.find params[:id]
- 	@vehicle_photo = VehiclePhoto.find params[:id]
-
 
  	@vehicle.destroy
       flash[:notice] = 'Vehicle Deleted'
-      render :action => :index
+      redirect_back fallback_location: root_path
  end
 
 end
