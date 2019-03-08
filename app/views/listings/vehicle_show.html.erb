@@ -32,12 +32,12 @@
 		<div class="divider"></div>
 	  </div>
 	</div>
-	  <% unless @vehicle.vehicle_photos.empty? %>
-		<% @vehicle.vehicle_photos.each_slice(3) do |image| %>
+	  <% unless @vehicle_photos.empty? %>
+		<% @vehicle_photos.each_slice(3) do |image| %>
 		<div class="row">
 		<% image.each do |g| %>
 		<div class="col s12 m4">
-         <%= image_tag(g.url, :class => "responsive-img materialboxed") %>      
+         <%= image_tag(g.file_name.url, :class => "responsive-img materialboxed") %>      
         </div>
         <% end %>
         </div>

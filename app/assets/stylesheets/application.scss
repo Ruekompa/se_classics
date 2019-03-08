@@ -9,8 +9,9 @@
 @import "materialize/components/color-variables";
 $primary-color: color("red", "darken-2") !default;
 @import "materialize";
-@import "additional";
 @import "dropzone/basic";
+@import "additional";
+
 
 @media #{$large-and-up} {
   a.brand-logo {

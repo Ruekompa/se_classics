@@ -35,6 +35,8 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'jquery-rails', '~> 4.3'
 
+gem 'jquery-ui-rails'
+
 gem 'materialize-sass', '~> 1.0.0', :git => 'https://github.com/Ruekompa/materialize-sass.git'
 
 # Reduces boot times through caching; required in config/boot.rb
@@ -51,6 +53,8 @@ gem 'mini_magick'
 gem 'carrierwave', :github => "carrierwaveuploader/carrierwave"
 
 gem 'pagy'
+
+gem 'ranked-model'
 
 gem 'dropzonejs-rails'
 

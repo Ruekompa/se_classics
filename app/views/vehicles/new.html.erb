@@ -7,7 +7,7 @@
 			</div>
 		</div>
         
-        <%= form_for @vehicle do |f| %>
+        <%= form_for(@vehicle, :html => { :multipart => true }) do |f| %>
         <div class="row">
            <div class="input-field col s12 m6">
              
@@ -54,12 +54,14 @@
        	</div>
        </div>
 
-       <div class="row">
-		<div class="col 12">
-         <%= f.file_field :vehicle_photos, multiple: true %>
-
-		</div>
-	</div>
+        <div class="row">
+          <%= f.fields_for :vehicle_photos do |p| %>
+           <div class="input-field col s12">
+             <%= p.label :file_name %>
+             <%= p.file_field :file_name, :multiple => true, name: "vehicle_photos[file_name][]" %>
+           </div>
+           <% end %>
+        </div>
 
        <div class="row">
        	    <div class="s12">

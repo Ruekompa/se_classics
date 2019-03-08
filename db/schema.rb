@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_24_182904) do
+ActiveRecord::Schema.define(version: 2019_03_07_212652) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,6 +39,14 @@ ActiveRecord::Schema.define(version: 2019_02_24_182904) do
     t.index ["type"], name: "index_ckeditor_assets_on_type"
   end
 
+  create_table "vehicle_photos", force: :cascade do |t|
+    t.string "file_name"
+    t.integer "row_order"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "vehicle_id"
+  end
+
   create_table "vehicles", force: :cascade do |t|
     t.string "title"
     t.text "description"
@@ -50,9 +58,7 @@ ActiveRecord::Schema.define(version: 2019_02_24_182904) do
     t.string "type_of_vehicle"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "vehicle_photo"
     t.decimal "price"
-    t.string "vehicle_photos", default: [], array: true
   end
 
 end

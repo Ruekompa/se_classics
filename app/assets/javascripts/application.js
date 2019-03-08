@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require rails-ujs
+//= require jquery-ui
 //= require materialize-sprockets
 //= require activestorage
 //= require ckeditor/init

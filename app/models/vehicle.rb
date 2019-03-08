@@ -1,3 +1,5 @@
 class Vehicle < ApplicationRecord
-		mount_uploaders :vehicle_photos, VehiclePhotoUploader
+    has_many :vehicle_photos
+
+    accepts_nested_attributes_for :vehicle_photos
 end
