@@ -26,7 +26,7 @@
                   <div class="card">
                     <% unless g.vehicle_photos.empty? %>
                     <div class="card-image waves-effect waves-block waves-light" />            
-                    <%= link_to (image_tag (g.vehicle_photos.first.file_name.thumb.url), class: 'activator'), vehicle_listing_path(g.id) %>    
+                    <%= link_to (image_tag (g.vehicle_photos.rank(:row_order).first.file_name.thumb.url), class: 'activator'), vehicle_listing_path(g.id) %>    
                     </div>
                     <% else %>
                     <div class="card-image waves-effect waves-block waves-light" />            
