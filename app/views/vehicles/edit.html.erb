@@ -54,27 +54,54 @@
        	</div>
        </div>
 
-       <div class="row">
-			<% unless @vehicle_photos.empty? %>
-		<% @vehicle_photos.each do |g| %>
-		<div class="col s12 m4">
-         <%= image_tag(g.file_name.url, :class => "responsive-img materialboxed") %>
-         <%= link_to "Delete", vehicle_vehicle_photo_path(@vehicle, g.id), :method => :delete, data: { confirm: "Are you sure you want to delete this image?" } %>
-        </div>
-        <% end %>
-        <% else %>
-        <h4> No Photos </h4>
-        <% end %>
-        </div>
+
 
         <div class="row">
+        	<div class="col s12">
+        		<h5>Add Photos</h5>
+        	</div>
           <%= f.fields_for :vehicle_photos, @vehicle.vehicle_photos.build do |p| %>
            <div class="input-field col s12">
-             <%= p.label :file_name %>
              <%= p.file_field :file_name, :multiple => true, name: "vehicle_photos[file_name][]" %>
            </div>
            <% end %>
         </div>
+        <div class="row">
+        	<div class="card-panel">
+        		<% unless @vehicle_photos.empty? %>
+        		
+       <table class="highlight edit-photos-index" id="sortable">
+      <thead>
+          <tr >
+          <th data-field="id">Reorder</th>
+              <th data-field="id">#</th>
+              <th data-field="name">Image</th>
+              <th data-field="reorder"><span>
+           
+              
+              </span></th>
+          </tr>
+        </thead>
+ 
+           <tbody id="media-contents">
+          <% @vehicle_photos.each.with_index(1) do |media, index| %>
+          
+          <tr data-item-id=<%= "#{media.id}" %> class="item">
+            <td><i class="material-icons">&#xE8FE;</i></td>
+            <td><%= index %></td>
+            <td> <%= image_tag(media.file_name.url, :class => "responsive-img materialboxed photos") %> </td>
+            <td> <%= link_to "Delete", vehicle_vehicle_photo_path(@vehicle, media.id), :method => :delete, data: { confirm: "Are you sure you want to delete this image?" } %></td>
+           </tr>     
+         
+               <% end %>
+                  
+                 </tbody>
+                </table>
+                <% else %>
+                <h4>No Photos</h4>
+                <% end %>
+            </div>
+            </div>
 
        <div class="row">
        	    <div class="s12">
@@ -83,10 +110,54 @@
                 </div>
             </div>
         </div>
-       </div>
+
         <% end %>
 
 	</div>
 </div>
+
+
+<script type="text/javascript">
+    jQuery(function() {
+  var cells, desired_width, table_width;
+  if ($('#sortable').length > 0) {
+    table_width = $('#sortable').width();
+    cells = $('#media-contents').find('tr')[0].cells.length;
+    desired_width = table_width / cells + 'px';
+    $('.table td').css('width', desired_width);
+    return $('#sortable').sortable({
+      axis: 'y',
+      items: '.item',
+      cursor: 'move',
+      sort: function(e, ui) {
+        return ui.item.addClass('active-item-shadow');
+      },
+      stop: function(e, ui) {
+        ui.item.removeClass('active-item-shadow');
+        return ui.item.children('td').effect('highlight', {}, 1000);
+      },
+      update: function(e, ui) {
+        var item_id, position;
+        item_id = ui.item.data('item-id');
+        console.log(item_id);
+        position = ui.item.index();
+        return $.ajax({
+          type: 'POST',
+          url:  '/admin/vehicles/<%= "#{@vehicle.id}" %>/vehicle_photos/update_row_order',
+          dataType: 'json',
+          data: {
+            vehicle_photo: {
+              vehicle_photo_id: item_id,
+              row_order_position: position
+            }
+          }
+        });
+      }
+    });
+  }
+});
+
+
+</script>
 
 

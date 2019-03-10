@@ -7,3 +7,6 @@ img.header-logo {
     padding-top: 67px;
 }
 
+img.responsive-img.materialboxed.photos {
+    max-width: 50%;
+}

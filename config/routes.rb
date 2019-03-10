@@ -7,7 +7,11 @@ Rails.application.routes.draw do
  get 'admin' => 'vehicles#index'
  scope :admin do
      resources :vehicles do
-  	     resources :vehicle_photos, :only => [:create, :destroy]
+
+  	     resources :vehicle_photos do
+  	     	delete 'delete_media', to: "vehicle_photos#delete_media"
+  	     	post :update_row_order, on: :collection
+  	     end
   	     mount Ckeditor::Engine => '/ckeditor'
   end
 end

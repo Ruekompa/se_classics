@@ -4,12 +4,12 @@ class VehiclesController < ApplicationController
 
   def index
   	@vehicles = Vehicle.order("created_at DESC")
-  	@vehicle_photos = VehiclePhoto.all
+  	@vehicle_photos = VehiclePhoto.rank(:row_order).all
   end
 
   def show
   	@vehicle = Vehicle.find params[:id]
-  	@vehicle_photos = @vehicle.vehicle_photos.all
+  	@vehicle_photos = @vehicle.vehicle_photos.rank(:row_order).all
 
   end
 
@@ -49,7 +49,11 @@ class VehiclesController < ApplicationController
 
   def edit
   	@vehicle = Vehicle.find params[:id]
-  	@vehicle_photos = @vehicle.vehicle_photos.all
+  	@vehicle_photos = @vehicle.vehicle_photos.rank(:row_order).all
+  	respond_to do |format|
+        format.html 
+        format.json { render json: @vehicle_photos}
+      end
   end
 
  def update
