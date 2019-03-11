@@ -7,6 +7,11 @@ class Vehicle < ApplicationRecord
     "#{year}-#{make}-#{model}"
   end
 
+  def should_generate_new_friendly_id?
+    year_changed? || super or
+    make_changed? || super or
+    model_changed? || super
+   end
 
     has_many :vehicle_photos, dependent: :destroy
 
