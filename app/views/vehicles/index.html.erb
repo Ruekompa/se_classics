@@ -30,13 +30,12 @@
                     <% end %>
                       <div class="card-content">
                         <span class="flow-text activator grey-text text-darken-4">
-                          <%= link_to g.title.titleize, vehicle_path(g.id), :class => "grey-text text-darken-4" %><i class="material-icons right">more_vert</i>
+                          <%= link_to g.title.titleize, vehicle_path(g.id), :class => "grey-text text-darken-4" %>
                         </span>
                       </div>
-                    <div class="card-reveal">
-                      <span class="card-title grey-text text-darken-4"> <%= g.title.titleize %><i class="material-icons right">close</i></span>
-                      <p><a href="/admin/vehicles/<%= g.id %>/edit" class="black-text">Edit</a></p>
-                      <p><%= link_to "Delete", vehicle_path(g.id), :class => "black-text", :method => :delete, data: { confirm: "Are you sure you want to delete this Vehicle?" } %></p>
+                    <div class="card-action">
+                      <span><a href="/admin/vehicles/<%= g.id %>/edit" class="blue-text">Edit</a></span>
+                      <span><%= link_to "Delete", vehicle_path(g.id), :class => "blue-text", :method => :delete, data: { confirm: "Are you sure you want to delete this Vehicle?" } %></span>
                     </div>
                   </div>
                 </div>
