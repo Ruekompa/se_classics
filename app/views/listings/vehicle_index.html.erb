@@ -1,6 +1,6 @@
 <section class="section">
   <div class="container">
-    <h1>Vehicles</h1>
+    <h1>Vehicles For Sale</h1>
       <div class="divider"></div>
     <% if @vehicles.empty? %>
       <p class="flow-text">No Vehicles Listed</p>
@@ -34,10 +34,11 @@
         <% end %>
       </ul>
     <% end %>
-    <% unless @vehicles.count > 12 %>
+    <% if Vehicle.where(sold: false).count > 12 %>
     <div class="row center">
    <%== pagy_materialize_nav(@pagy) %>
    </div>
+   <% else %>
    <% end %>  
   </div>
 </section>

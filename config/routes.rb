@@ -2,8 +2,14 @@ Rails.application.routes.draw do
 
  get 'listings/vehicles' => 'listings#vehicle_index'
  get 'listings/vehicles/:id' => 'listings#vehicle_show', as: 'vehicle_listing'
+
+
+  devise_for :admins, :skip => [:registrations]
+  as :admin do
+    get 'admins/edit' => 'devise/registrations#edit', :as => 'edit_admin_registration'
+    put 'admins' => 'devise/registrations#update', :as => 'admin_registration'
+  end
  
- devise_for :admins
  get 'admin' => 'vehicles#index'
  scope :admin do
      resources :vehicles do
