@@ -8,7 +8,7 @@ class VehiclesController < ApplicationController
   end
 
   def show
-  	@vehicle = Vehicle.find params[:id]
+  	@vehicle = Vehicle.friendly.find params[:id]
   	@vehicle_photos = @vehicle.vehicle_photos.rank(:row_order).all
 
   end
@@ -48,7 +48,7 @@ class VehiclesController < ApplicationController
    end
 
   def edit
-  	@vehicle = Vehicle.find params[:id]
+  	@vehicle = Vehicle.friendly.find params[:id]
   	@vehicle_photos = @vehicle.vehicle_photos.rank(:row_order).all
   	respond_to do |format|
         format.html 
@@ -57,7 +57,7 @@ class VehiclesController < ApplicationController
   end
 
  def update
- 	@vehicle = Vehicle.find params[:id]
+ 	@vehicle = Vehicle.friendly.find params[:id]
  	@vehicle_photos = @vehicle.vehicle_photos.all
     if params[:vehicle_photos].present?
  	    if @vehicle.update_attributes vehicle_params
@@ -82,7 +82,7 @@ class VehiclesController < ApplicationController
  end
 
  def destroy
- 	@vehicle = Vehicle.find params[:id]
+ 	@vehicle = Vehicle.friendly.find params[:id]
 
  	@vehicle.destroy
       flash[:notice] = 'Vehicle Deleted'

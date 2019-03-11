@@ -24,16 +24,16 @@
                   <div class="card">
                     <% unless g.vehicle_photos.empty? %>
                     <div class="card-image waves-effect waves-block waves-light" />            
-                    <%= link_to (image_tag (g.vehicle_photos.rank(:row_order).first.file_name.thumb.url), class: 'activator'), vehicle_listing_path(g.id) %>    
+                    <%= link_to (image_tag (g.vehicle_photos.rank(:row_order).first.file_name.thumb.url), class: 'activator'), vehicle_listing_path(g.slug) %>    
                     </div>
                     <% else %>
                     <div class="card-image waves-effect waves-block waves-light" />            
-                    <%= link_to (image_tag ("/images/vehicle-placeholder.jpg"), class: 'activator'), vehicle_listing_path(g.id) %>    
+                    <%= link_to (image_tag ("/images/vehicle-placeholder.jpg"), class: 'activator'), vehicle_listing_path(g.slug) %>    
                     </div>
                     <% end %>
                       <div class="card-content">
                         <span class="flow-text activator grey-text text-darken-4">
-                          <%= link_to g.title.titleize, vehicle_path(g.id), :class => "grey-text text-darken-4" %>
+                          <%= link_to g.title.titleize, vehicle_listing_path(g.slug), :class => "grey-text text-darken-4" %>
                         </span>
                       </div>
                     

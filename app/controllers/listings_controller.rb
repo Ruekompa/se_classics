@@ -7,7 +7,7 @@ class ListingsController < ApplicationController
   end
 
   def vehicle_show
-  	@vehicle = Vehicle.find params[:id]
+  	@vehicle = Vehicle.friendly.find params[:id]
   	@vehicle_photos = @vehicle.vehicle_photos.rank(:row_order).all
   end
 end
