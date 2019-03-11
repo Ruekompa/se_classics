@@ -11,7 +11,6 @@ class VehiclePhotosController < ApplicationController
   end
 
 def destroy
- 	@vehicle = Vehicle.find params[:id]
  	@vehicle_photo = VehiclePhoto.find params[:id]
 
 
