@@ -1,4 +1,5 @@
 CarrierWave.configure do |config|
+  if Rails.env.production?
   config.fog_provider = 'fog/aws'                        # required
   config.fog_credentials = {
     provider:              'AWS',                        # required
@@ -11,4 +12,6 @@ CarrierWave.configure do |config|
   config.fog_directory  = 'seclassics'                                      # required
   config.fog_public     = true                                                 # optional, defaults to true
   config.fog_attributes = { cache_control: "public, max-age=#{365.days.to_i}" } # optional, defaults to {}
+ else
+ end
 end
