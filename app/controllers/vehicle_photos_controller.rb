@@ -1,6 +1,6 @@
 class VehiclePhotosController < ApplicationController
 	before_action :authenticate_admin!
-	before_action :set_vehicle
+
 
   def update_row_order
     @vehicle_photo = VehiclePhoto.find(vehicle_photos_params[:vehicle_photo_id])
@@ -29,9 +29,7 @@ def destroy
 
   private
 
-    def set_vehicle
-    @vehicle = Vehicle.find(params[:vehicle_id])
-  end
+   
 
 
 
