@@ -28,6 +28,7 @@
                     <% if g.sold? %>
                     <span class="card-title sold"><h1>SOLD</h1></span>
                     <% else %>
+                    <span class="card-title price"><%= number_to_currency(g.price) %></span>
                     <% end %>      
                     </div>
                     <% else %>
@@ -36,6 +37,7 @@
                     <% if g.sold? %>
                     <span class="card-title sold"><h1>SOLD</h1></span>
                     <% else %>
+                    <span class="card-title price"><%= number_to_currency(g.price) %></span>
                     <% end %>      
                     </div>
                     <% end %>
