@@ -17,6 +17,7 @@
 //= require activestorage
 //= require ckeditor/init
 //= require dropzone
+//= require rails.validations
 //= require_tree .
 
 $(document).ready(function(){

@@ -16,3 +16,30 @@ img.header-logo {
 img.responsive-img.materialboxed.photos {
     max-width: 50%;
 }
+
+div.field_with_errors > input#email {
+    border-bottom: 1px solid #e57373;
+    box-shadow: 0 1px 0 0 #e57373;
+}
+
+div.field_with_errors > input#name {
+    border-bottom: 1px solid #e57373;
+    box-shadow: 0 1px 0 0 #e57373;
+}
+
+div.field_with_errors > textarea#message {
+    border-bottom: 1px solid #e57373;
+    box-shadow: 0 1px 0 0 #e57373;
+}
+
+.alert.alert-notice {
+    background-color: #4db6ac;
+    font-size: 21px;
+    color: #fff;
+}
+
+.alert.alert-alert {
+    background-color: #e57373;
+    font-size: 21px;
+    color: #fff;
+}
