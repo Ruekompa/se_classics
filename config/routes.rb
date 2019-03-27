@@ -3,6 +3,10 @@ Rails.application.routes.draw do
  get 'listings/vehicles' => 'listings#vehicle_index'
  get 'listings/vehicles/:id' => 'listings#vehicle_show', as: 'vehicle_listing'
 
+ get 'contact', to: 'contacts#new'
+ resource "contact", only: [:new, :create]
+ resolve('Contact') { [:contact] }
+
 
   devise_for :admins, :skip => [:registrations]
   as :admin do

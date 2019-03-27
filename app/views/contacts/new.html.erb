@@ -1,0 +1,73 @@
+<div class="section white" id="connect">
+<div class="container">
+    <div class="row">
+       <div id="contact" class="col s12 m12 contact">
+        <h1 class="section-text center">Contact Us!</h1>
+          <h4 class="center" style="font-weight: lighter;">We Buy, Sell &amp; Trade<br /> Classic Cars, Trucks, Motorcycles &amp; Parts</h4>
+       </div>
+       <div class="col s12">
+        <h4 class="center">For faster response, please call.</h4>
+      </div>
+       <div class="col s12 m6 l6 center">
+          <h2><i class="material-icons">local_phone</i> Telephone</h2>
+          <a href="tel://727-277-6049" class="flow-text black-text">423-788-4009</a>
+       </div> 
+        <div class="col s12 m6 l6 center">
+          <h2><i class="material-icons">email</i> email</h2>
+          <a href="mailto:drwoodgrain@gmail.com" class="flow-text black-text">drwoodgrain@gmail.com</a>
+       </div> 
+    </div>
+    <div class="row">
+      <div class="col s12 m6 l6 center">
+        <h2><i class="material-icons">location_on</i> Address</h2>
+          <p class="flow-text grey-text text-darken-2">8745 HWY 58<br /> Harrison, TN 37341</p>  
+       </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="section white">
+  <div class="container">
+          <%= form_for @contact, validate: true do |f| %>
+          <div class="row">
+          <div class="col s12">
+            <label class="active" for="name">Name</label>
+             <%= f.text_field :name, :id => "name", :class => "validate", :type => "text" %>
+          </div>
+          </div>
+         <div class="row">
+         <div class="col s12">
+          <label class="active" for="email">Email</label>
+          <%= f.text_field :email, :id => "email", :class => "validate", :type => "text" %>
+         </div>
+         </div>
+         <div class="row">
+          <div class="col s12">
+          <label class="active" for="subject">Phone Number</label>
+          <%= f.text_field :phone_number, :id => "phone_number", :class => "validate" %>
+          </div>
+         </div>
+         <div class="row">
+          <div class="col s12">
+          <label class="active" for="subject">Subject</label>
+          <%= f.text_field :subject, :id => "subject", :class => "validate" %>
+          </div>
+         </div>
+          <div class="row">
+          <div class="col s12">
+          <label class="active" for="message">Message</label>
+          <%= f.text_area :message, :id => "message", :class => "validate materialize-textarea" %>
+          </div>
+         </div>
+          <div class="row">
+          <div style="padding-top: 15px;" class="col s12 center-align">
+            <%= button_tag(type: 'submit', class: "waves-effect waves-light btn contact red darken-4") do %>
+              Send <i class="material-icons right">send</i>
+         <% end %>
+                  <%= f.text_field :nickname, :style => 'visibility: hidden;'  %>       
+         </div>
+       </div>
+      <% end %>
+   </div>
+</div>
