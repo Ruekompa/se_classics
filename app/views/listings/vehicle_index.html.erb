@@ -42,7 +42,7 @@
         <% end %>
       </ul>
     <% end %>
-    <% if Vehicle.where(sold: false).count > 12 %>
+    <% if Vehicle.count > 12 %>
     <div class="row center">
    <%== pagy_materialize_nav(@pagy) %>
    </div>
