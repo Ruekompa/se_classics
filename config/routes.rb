@@ -27,7 +27,7 @@ Rails.application.routes.draw do
  end
 
  namespace :admin do
-  root 'vehicles#index' # creates user_root_path
+  root 'vehicles#index' 
  end
 
  root 'pages#home'

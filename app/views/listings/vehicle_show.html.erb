@@ -37,9 +37,9 @@
 	</div>
 	  <% unless @vehicle_photos.empty? %>
 		<% @vehicle_photos.each_slice(3) do |image| %>
-		<div class="row">
+		<div class="row listing-photos">
 		<% image.each do |g| %>
-		<div class="col s12 m4">
+		<div class="col s12 m4 listing-photo">
          <%= image_tag(g.file_name.url, :class => "responsive-img materialboxed") %>      
         </div>
         <% end %>

@@ -39,3 +39,12 @@ span.brand-text2 {
     font-size: 1.5rem;
   }
 }
+
+@media #{$small-and-down} {
+.row.listing-photos {
+    margin-bottom: 0;
+}
+.col.s12.m4.listing-photo {
+    margin-bottom: 20px;
+}
+}
