@@ -15,7 +15,7 @@
 //= require jquery-ui
 //= require materialize-sprockets
 //= require activestorage
-//= require ckeditor/init
+//= require trix
 //= require dropzone
 //= require rails.validations
 //= require_tree .

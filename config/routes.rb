@@ -22,7 +22,6 @@ Rails.application.routes.draw do
   	     	delete 'delete_media', to: "vehicle_photos#delete_media"
   	     	post :update_row_order, on: :collection
   	     end
-  	     mount Ckeditor::Engine => '/ckeditor'
      end
  end
 

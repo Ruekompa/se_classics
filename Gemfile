@@ -58,7 +58,7 @@ gem 'ranked-model'
 
 gem 'dropzonejs-rails'
 
-gem 'ckeditor'
+gem 'trix'
 
 gem 'fog-aws'
 

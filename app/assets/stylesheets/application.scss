@@ -11,6 +11,7 @@ $primary-color: color("red", "darken-2") !default;
 @import "materialize";
 @import "dropzone/basic";
 @import "additional";
+@import "trix";
 
 
 @media #{$large-and-up} {

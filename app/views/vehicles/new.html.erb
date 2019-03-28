@@ -19,9 +19,10 @@
                <label for="title" class="grey-text lighten-3">Vehicle Name</label>
               <%= f.text_field :title, :class => "validate", :type => "text" %>
           </div>
+          
           <div class="input-field col s12">
-              
-              <%= f.cktext_area :description, ckeditor: { language: 'us', toolbar: 'mini'} %>
+              <%= f.hidden_field :description, id: :post_body %>
+              <trix-editor input="post_body"></trix-editor>
            </div>
 
            <div class="input-field col s12 m6">

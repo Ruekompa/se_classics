@@ -1,0 +1,1 @@
+Loofah::HTML5::WhiteList::ALLOWED_PROTOCOLS.add('tel')
