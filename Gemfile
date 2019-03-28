@@ -58,7 +58,7 @@ gem 'ranked-model'
 
 gem 'dropzonejs-rails'
 
-gem 'trix'
+gem 'trix-rails', require: 'trix'
 
 gem 'fog-aws'
 
