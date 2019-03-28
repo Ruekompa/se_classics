@@ -6,7 +6,7 @@
       <p class="flow-text">No Vehicles Listed</p>
     <% else %>
         <% @vehicles.each_slice(3) do |slice| %> 
-          <div class="row">
+          <div class="row listings">
             <% slice.each do |g| %>
                 <div class="col s12 m4">
                   <div class="card">

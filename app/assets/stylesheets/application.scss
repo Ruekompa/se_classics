@@ -49,3 +49,9 @@ span.brand-text2 {
     margin-bottom: 20px;
 }
 }
+
+@media #{$small-and-down} {
+.row.listings {
+    margin-bottom: 0;
+}
+}
