@@ -19,16 +19,29 @@
     <div class="nav-wrapper grey darken-4">
       <a href="/" class="brand-logo white-text" id="brandLogo"><span class="brand-text1">Southeastern</span> <span class="brand-text2">Classics</span></a>
       <a href="#" data-target="mobile-nav" class="sidenav-trigger white-text"><i class="material-icons">menu</i></a>
-      <ul class="right hide-on-med-and-down">
+      <ul class="right hide-on-med-and-down" style="padding-right: 28px;">
         <li><a href="/admin/vehicles" class="waves-effect waves-light btn manage red darken-2">Manage Vehicles</a></li>
-        <li><a href="/admins/edit" class="waves-effect waves-light btn manage red darken-2">Edit Account</a></li>
+        <li><a class="dropdown-trigger white-text" href='#' data-target='dropdown1'><i class="medium material-icons" style="font-size: 2rem;">account_circle</i></a></li>
       </ul>
+      <ul id="dropdown1" class="dropdown-content">
+     <li><a href="<%= edit_admin_registration_path %>" class="blue-text">Edit Account</a></li>
+     <li class="divider"></li>
+     <li><%= link_to "Sign out", destroy_admin_session_path, :method => :delete, 'data-skip-pjax' => true, :class => "grey-text darken-2" %></li> 
+   
+     </ul>
+
     </div>
     </nav>
     </div>
-    <ul class="sidenav" id="mobile-nav">
+    <ul class="sidenav collapsible" id="mobile-nav">
         <li><a href="/admin/vehicles" class="black-text">Manage Vehicles</a></li>
-        <li><a href="/admins/edit" class="black-text">Edit Account</a></li>
+        <li>
+        <div class="collapsible-header"><i class="material-icons">account_circle</i>Account</div>
+        <div class="collapsible-body"><a href="<%= edit_admin_registration_path %>" class="black-text" style="padding-left: 15%;">Edit Account</a><br>
+        <%= link_to "Sign out", destroy_admin_session_path, :method => :delete, 'data-skip-pjax' => true, :class => "black-text", :style => "padding-left: 15%" %>
+        </div>
+        </li>
+
     </ul>
     </header>
 

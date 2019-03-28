@@ -39,7 +39,7 @@ div.field_with_errors > textarea#message {
 }
 
 .alert.alert-alert {
-    background-color: #e57373;
+    background-color: #ff0000;
     font-size: 21px;
     color: #fff;
 }
