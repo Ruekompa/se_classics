@@ -15,15 +15,13 @@
 	<% if @vehicles.empty? %>
       <p class="flow-text">No Vehicles Listed</p>
     <% else %>
-      <ul class="vehicles_list">
         <% @vehicles.each_slice(3) do |slice| %> 
           <div class="row">
             <% slice.each do |g| %>
-              <li class="vehicle_node">
                 <div class="col s12 m4">
                   <div class="card">
                     <% unless g.vehicle_photos.empty? %>
-                    <div class="card-image waves-effect waves-block waves-light" />            
+                    <div class="card-image waves-effect waves-block waves-light">            
                     <%= link_to (image_tag (g.vehicle_photos.rank(:row_order).first.file_name.thumb.url), class: 'activator', :alt => "#{g.title.titleize}"), vehicle_listing_path(g.slug) %>
                     <% if g.sold? %>
                     <span class="card-title sold"><h1>SOLD</h1></span>
@@ -32,7 +30,7 @@
                     <% end %>      
                     </div>
                     <% else %>
-                    <div class="card-image waves-effect waves-block waves-light" />            
+                    <div class="card-image waves-effect waves-block waves-light">            
                     <%= link_to (image_tag ("/images/vehicle-placeholder.jpg"), class: 'activator', :alt => "#{g.title.titleize}"), vehicle_listing_path(g.slug) %>
                     <% if g.sold? %>
                     <span class="card-title sold"><h1>SOLD</h1></span>
@@ -46,14 +44,11 @@
                           <%= link_to g.title.titleize, vehicle_listing_path(g.slug), :class => "grey-text text-darken-4" %>
                         </span>
                       </div>
-                    
                   </div>
                 </div>
-              </li> 
             <% end %>
           </div>
         <% end %>
-      </ul>
     <% end %>
     <% unless @vehicles.empty? %>
     <div class="row">
