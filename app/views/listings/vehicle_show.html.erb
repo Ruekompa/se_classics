@@ -36,11 +36,11 @@
 	  </div>
 	</div>
 	  <% unless @vehicle_photos.empty? %>
-		<% @vehicle_photos.each_slice(3) do |image| %>
+		<% @vehicle_photos.each_with_index.each_slice(3) do |image| %>
 		<div class="row listing-photos">
-		<% image.each do |g| %>
+		<% image.each do |g, index| %>
 		<div class="col s12 m4 listing-photo">
-         <%= image_tag(g.file_name.url, :class => "responsive-img materialboxed") %>      
+         <%= image_tag(g.file_name.url, :class => "responsive-img materialboxed", :alt => "#{@vehicle.title.titleize} Photo #{index + 1}") %>      
         </div>
         <% end %>
         </div>

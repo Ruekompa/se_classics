@@ -13,7 +13,7 @@
                 <div class="col s12 m4">
                   <div class="card">
                     <% unless g.vehicle_photos.empty? %>
-                    <div class="card-image waves-effect waves-block waves-light" />     <%= link_to (image_tag (g.vehicle_photos.rank(:row_order).first.file_name.thumb.url), class: 'activator'), vehicle_listing_path(g.slug) %>
+                    <div class="card-image waves-effect waves-block waves-light" />     <%= link_to (image_tag (g.vehicle_photos.rank(:row_order).first.file_name.thumb.url), class: 'activator', :alt => "#{g.title.titleize}"), vehicle_listing_path(g.slug) %>
                     <% if g.sold? %>
                     <span class="card-title sold"><h1>SOLD</h1></span>
                     <% else %>
@@ -22,7 +22,7 @@
                     </div>
                     <% else %>
                     <div class="card-image waves-effect waves-block waves-light" />            
-                    <%= link_to (image_tag ("/images/vehicle-placeholder.jpg"), class: 'activator'), vehicle_listing_path(g.slug) %> 
+                    <%= link_to (image_tag ("/images/vehicle-placeholder.jpg"), class: 'activator', :alt => "#{g.title.titleize}"), vehicle_listing_path(g.slug) %> 
                     <% if g.sold? %>
                     <span class="card-title sold"><h1>SOLD</h1></span>
                     <% else %>
