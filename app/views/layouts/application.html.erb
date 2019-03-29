@@ -11,7 +11,17 @@
     </script>
 
     <meta charset="UTF-8">
-    <title>Southeastern Classics</title>
+    <% if @vehicle %>
+        <title><%= @vehicle.title.titleize %> | Southeastern Classics</title>
+    <% elsif current_page?('/') %>
+         <title>Southeastern Classics</title>
+    <% elsif @vehicles %>
+         <title>Vehicles | Southeastern Classics</title>
+    <% elsif current_page?('/contact') %>
+        <title>Contact | Southeastern Classics</title>
+    <% else %>
+        <title>Southeastern Classics</title>
+    <% end %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
