@@ -31,4 +31,9 @@ class ListingsController < ApplicationController
   	@vehicle_photos = VehiclePhoto.rank(:row_order).all
   end
 
+  def vehicles_classic
+  	@pagy, @vehicles = pagy(Vehicle.where("year < ?", Time.new.strftime("%Y").to_i - 25).order("created_at DESC"), items: 12)
+  	@vehicle_photos = VehiclePhoto.rank(:row_order).all
+  end
+
 end

@@ -1,0 +1,58 @@
+<section class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col s12">
+    <h1>Classics</h1>
+      <div class="divider"></div>
+    </div>
+  </div>
+  <%= render 'vehicle_types' %>
+    <% if @vehicles.empty? %>
+    <div class="row">
+      <div class="col s12">
+      <p class="flow-text">No Vehicles Listed</p>
+    </div>
+   </div>
+    <% else %>
+        <% @vehicles.each_slice(3) do |slice| %> 
+          <div class="row listings">
+            <% slice.each do |g| %>
+                <div class="col s12 m4">
+                  <div class="card">
+                    <% unless g.vehicle_photos.empty? %>
+                    <div class="card-image waves-effect waves-block waves-light">     <%= link_to (image_tag (g.vehicle_photos.rank(:row_order).first.file_name.thumb.url), class: 'activator', :alt => "#{g.title.titleize}"), vehicle_listing_path(g.slug) %>
+                    <% if g.sold? %>
+                    <span class="card-title sold"><h1>SOLD</h1></span>
+                    <% else %>
+                    <span class="card-title price"><%= number_to_currency(g.price) %></span>
+                    <% end %>  
+                    </div>
+                    <% else %>
+                    <div class="card-image waves-effect waves-block waves-light">            
+                    <%= link_to (image_tag ("/images/vehicle-placeholder.jpg"), class: 'activator', :alt => "#{g.title.titleize}"), vehicle_listing_path(g.slug) %> 
+                    <% if g.sold? %>
+                    <span class="card-title sold"><h1>SOLD</h1></span>
+                    <% else %>
+                    <span class="card-title price"><%= number_to_currency(g.price) %></span>
+                    <% end %>     
+                    </div>
+                    <% end %>
+                      <div class="card-content">
+                        <span class="flow-text activator grey-text text-darken-4">
+                          <%= link_to g.title.titleize, vehicle_listing_path(g.slug), :class => "grey-text text-darken-4" %>
+                        </span>
+                      </div>
+                  </div>
+                </div>
+            <% end %>
+          </div>
+        <% end %>
+    <% end %>
+    <% if @pagy.count > 12 %>
+    <div class="row center">
+   <%== pagy_materialize_nav(@pagy) %>
+   </div>
+   <% else %>
+   <% end %>  
+  </div>
+</section>

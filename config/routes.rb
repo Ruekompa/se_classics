@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
  get 'listings/vehicles' => 'listings#vehicle_index'
  get 'listings/vehicles/sold' => 'listings#vehicles_sold', as: 'vehicles_sold'
+ get 'listings/vehicles/classics' => 'listings#vehicles_classic', as: 'vehicles_classic'
  get 'listings/vehicles/trucks' => 'listings#vehicles_trucks', as: 'vehicles_trucks'
  get 'listings/vehicles/cars' => 'listings#vehicles_cars', as: 'vehicles_cars'
  get 'listings/vehicles/motorcycles' => 'listings#vehicles_motorcycles', as: 'vehicles_motorcycles'
