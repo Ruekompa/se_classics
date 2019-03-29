@@ -6,6 +6,7 @@
       <div class="divider"></div>
     </div>
   </div>
+  <%= render 'vehicle_types' %>
     <% if @vehicles.empty? %>
     <div class="row">
       <div class="col s12">
@@ -13,7 +14,6 @@
     </div>
    </div>
     <% else %>
-     <%= render 'vehicle_types' %>
         <% @vehicles.each_slice(3) do |slice| %> 
           <div class="row listings">
             <% slice.each do |g| %>
