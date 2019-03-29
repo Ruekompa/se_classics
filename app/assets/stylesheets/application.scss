@@ -41,6 +41,10 @@ span.brand-text2 {
   }
 }
 
+h1 {
+    font-size: 3.2rem;
+}
+
 @media #{$small-and-down} {
 .row.listing-photos {
     margin-bottom: 0;
